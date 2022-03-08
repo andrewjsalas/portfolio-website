@@ -160,7 +160,7 @@ a {
   font-family: 'Nunito', sans-serif;
   font-weight: bold;
   font-size: 25px;
-  color: rgb(18, 43, 68);
+  color: rgb(0, 0, 0);
   cursor: pointer;
 }
 
@@ -184,7 +184,6 @@ a {
   text-align: center;
   border-top: 5px inset rgb(114, 134, 158);
   border-width: 40%;
-  height: 100vh;
 }
 
 .project-container h1 {
@@ -197,55 +196,99 @@ a {
   font-size: 6rem;
 }
 
-@media (max-width: 28.75em) {
-  .project-container h1 {
-    font-size: 4rem;
-  }
-}
-
-.project-grid {
-  display: inline-grid;
-  grid-template-columns: auto auto auto;
-  background-repeat: no-repeat;
-  grid-gap: 4rem;
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 5rem;
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
   margin-bottom: 6rem;
 }
 
-@media (max-width: 30.62em) {
+@media (max-width: 30.625em) {
   .project-container {
     padding: 6rem 1rem;
   }
-
-  .project-grid {
+  .grid-container {
     grid-template-columns: 1fr;
   }
 }
 
 .project-card {
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   border-radius: 2px;
 }
 
-.project-image {
-  height: calc(100% - 6.8rem);
-  width: 100%;
-  object-fit: cover;
+.project-title {
+  font-family: 'Inter', sans-serif;
+  color: rgb(240, 240, 240);
+  padding: 10px;
+  font-size: 3.5rem;
 }
 
-.project-title {
-  font-size: 3rem;
-  padding: 2rem 2rem;
-  color: var(--main-text-color);
+.project-img {
+  border: 2px solid rgb(134, 134, 134);
+  height: calc(60% - 6.8rem);
+  width: 100%;
+  object-fit: cover;
+  box-shadow: 5px 10px 8px #080808;
+}
+
+.project-live-demo,
+.project-github {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  color: rgb(0, 0, 0);
+  display: inline-flex;
+  align-items: center;
+  font-size: 2.5rem;
+  transition: 0.3s;
+}
+
+.project-demo-btn,
+.project-github-btn {
+  display: inline-flex;
+  border-style: none;
+  background-color: #edf9ff;
+  justify-content: space-between;
+  align-content: center;
+  padding: 5px;
+  margin: 10px 55px;
+  border-radius: 5px;
+  transition: 0.3s;
+  box-shadow: 5px 10px 8px #080808;
+}
+
+.project-demo-btn:hover,
+.project-github-btn:hover {
+  background-color: #080808;
+}
+
+.project-live-demo:hover,
+.project-github:hover {
+  color: white;
+}
+
+.project-desc {
+  font-family: 'Carrois Gothic SC', sans-serif;
+  color: rgb(219, 219, 219);
+  font-size: 2rem;
+  list-style: disc;
+  text-align: left;
+  width: 90%;
+  word-wrap: wrap;
 }
 
 /* About Section */
 .about-container {
+  padding: 10rem 2rem;
+  display: inline-block;
   text-align: center;
-  height: 100vh;
+  align-content: center;
+  margin-bottom: 15rem;
+  height: 80vh;
 }
+
 .about-container h1 {
   font-family: 'Fira Sans Extra Condensed', sans-serif;
   color: white;
@@ -254,12 +297,42 @@ a {
   font-size: 6rem;
 }
 
+.about-container p {
+  display: inline-block;
+  text-align: center;
+  margin: 20px;
+  color: whitesmoke;
+  font-family: 'Inter', sans-serif;
+  font-size: 2.5rem;
+  width: 60%;
+}
+
+.email-form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+form {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 2vw 4vw;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 5px;
+}
+
+form h3 {
+  color: Black;
+}
+
 /* Music Section */
 .music-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  padding: 10rem 2rem;
 }
 
 .music-container h1 p {
@@ -277,10 +350,10 @@ a {
 
 .music-container p {
   color: whitesmoke;
-  font-size: 4rem;
+  font-size: 3rem;
   text-align: center;
-  font-family: 'Carrois Gothic SC', sans-serif;
-  width: 70%;
+  font-family: 'Inter', sans-serif;
+  width: 60%;
 }
 
 .music-player {
