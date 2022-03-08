@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&family=Fira+Sans+Extra+Condensed:wght@500&family=Oswald:wght@500&family=Pathway+Gothic+One&family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap');
+
+:root {
+  --main-color: #303030;
+  --secondary-color: #131313;
+  --main-text-color: rgb(255, 249, 193);
+  --secondary-text-color: #fff;
+  --accent-color: gold;
+}
+
+/* GLOBAL STYLES */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+@media (max0-width: 61.35em) {
+  html {
+    font-size: 58%;
+  }
+}
+
+@media (max0-width: 28.75em) {
+  html {
+    font-size: 55%;
+  }
+}
+
+/* BASE STYLES */
+body {
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.4;
+  background-image: linear-gradient(62deg, #1a2025 0%, #131214 100%);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* NAV */
+.nav-container {
+  display: flex;
+  z-index: 10;
+  justify-content: space-between;
+  position: fixed;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2px 32px;
+  background-color: #131313;
+}
+
+.nav-list {
+  display: flex;
+  margin-right: 2rem;
+}
+
+.logo {
+  margin: 2rem;
+}
+
+.logo img {
+  height: 90px;
+}
+
+@media (max-width: 28.75em) {
+  .nav-container {
+    justify-content: center;
+  }
+
+  .nav-list {
+    margin: 0 1rem;
+  }
+}
+
+.nav-list a {
+  display: block;
+  font-size: 2.7rem;
+  padding: 2.5rem;
+  color: white;
+  font-family: 'Carrois Gothic SC', sans-serif;
+}
+
+.nav-list a:hover {
+  opacity: 0.65;
+}
+
+/* WELCOME SECTION */
+.welcome-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: linear-gradient(62deg, #262f36 0%, #131214 100%);
+}
+
+.welcome-name {
+  position: relative;
+  color: #fff;
+  font-size: 12rem;
+  font-family: 'Fira Sans Extra Condensed', sans-serif;
+  letter-spacing: 3px;
+}
+
+.welcome-desc {
+  position: relative;
+  color: rgb(173, 173, 173);
+  font-size: 4rem;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  bottom: 10px;
+}
+
+/* Welcome Buttons */
+.welcome-btns {
+  display: inline-flex;
+  justify-content: center;
+  padding: 0;
+}
+
+.github-btn,
+.resume-btn,
+.codepen-btn,
+.linkedin-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px;
+  margin: 25px;
+  margin-top: 100px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 5px 10px 8px #080808;
+  /* background-color: rgb(228, 230, 235); */
+
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+  font-size: 25px;
+  color: rgb(18, 43, 68);
+  cursor: pointer;
+}
+
+.github-btn:hover,
+.resume-btn:hover,
+.codepen-btn:hover,
+.linkedin-btn:hover {
+  background-color: rgb(228, 230, 235, 0.7);
+  transition: 0.4s;
+}
+
+.welcome-btns img {
+  display: inline-flex;
+  height: 40px;
+  padding: 1px 5px;
+}
+
+/* PROJECT SECTION */
+.project-container {
+  padding: 10rem 2rem;
+  text-align: center;
+  border-top: 5px inset rgb(114, 134, 158);
+  border-width: 40%;
+  height: 100vh;
+}
+
+.project-container h1 {
+  font-family: 'Fira Sans Extra Condensed', sans-serif;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: white;
+  max-width: 640px;
+  margin: 0 auto 6rem auto;
+  font-size: 6rem;
+}
+
+@media (max-width: 28.75em) {
+  .project-container h1 {
+    font-size: 4rem;
+  }
+}
+
+.project-grid {
+  display: inline-grid;
+  grid-template-columns: auto auto auto;
+  background-repeat: no-repeat;
+  grid-gap: 4rem;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  margin-bottom: 6rem;
+}
+
+@media (max-width: 30.62em) {
+  .project-container {
+    padding: 6rem 1rem;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.project-card {
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 2px;
+}
+
+.project-image {
+  height: calc(100% - 6.8rem);
+  width: 100%;
+  object-fit: cover;
+}
+
+.project-title {
+  font-size: 3rem;
+  padding: 2rem 2rem;
+  color: var(--main-text-color);
+}
+
+/* About Section */
+.about-container {
+  text-align: center;
+  height: 100vh;
+}
+.about-container h1 {
+  font-family: 'Fira Sans Extra Condensed', sans-serif;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 6rem;
+}
+
+/* Music Section */
+.music-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+.music-container h1 p {
+  text-align: center;
+}
+
+.music-container h1 {
+  font-family: 'Fira Sans Extra Condensed', sans-serif;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 6rem;
+  margin-bottom: 50px;
+}
+
+.music-container p {
+  color: whitesmoke;
+  font-size: 4rem;
+  text-align: center;
+  font-family: 'Carrois Gothic SC', sans-serif;
+  width: 70%;
+}
+
+.music-player {
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+  padding: 15px;
+}
